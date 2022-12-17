@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-06-02T15:48:30.160+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/demotraining/templates/page-home"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Author books"
+        sling:resourceType="demotraining/components/structure/page">
+        <logo
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="demotraining/components/structure/logo"/>
+        <title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="demotraining/components/content/title"/>
+        <topnav
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="demotraining/components/structure/topnav"/>
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="demotraining/components/content/text"
+                text="&lt;p>This is a home page&lt;/p>"
+                textIsRich="true"/>
+        </par>
+        <parsys
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <author_books
+                jcr:created="{Date}2022-06-02T15:46:54.251+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2022-06-02T15:48:30.132+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="demotraining/components/content/author-books"
+                authorname="SANTOSH"
+                books="[AEM,JAVA,PYTHON]">
+                <bookdetailswithmap jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        bookname="AEM in master"
+                        booksubject="sling"
+                        publishyear="2022"/>
+                    <item1
+                        jcr:primaryType="nt:unstructured"
+                        bookname="java programing"
+                        booksubject="thrred"
+                        publishyear="1999"/>
+                    <item2
+                        jcr:primaryType="nt:unstructured"
+                        bookname="Python master"
+                        booksubject="python"
+                        publishyear="2021"/>
+                </bookdetailswithmap>
+            </author_books>
+        </parsys>
+    </jcr:content>
+</jcr:root>

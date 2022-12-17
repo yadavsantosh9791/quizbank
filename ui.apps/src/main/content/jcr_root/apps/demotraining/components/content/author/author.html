@@ -1,0 +1,82 @@
+<div data-sly-use.citiBuenFin="com.citi.core.models.CitiBuenFin"
+     id="${citiBuenFin.buenFinId}">
+    <div id="filtros"  data-buenfin-endpoint="${citiBuenFin.configJson}">
+        <form>
+            <ul class="filtros-list">
+                <li class="filtros-list-item">
+                    <div class="citi-textfield variant-primary">
+                        <label class="citi-textfield-label">${'form.citibuenfin.data.label' @ i18n}</label>
+                        <div class="citi-textfield-input-container">
+                            <input id="keyword"
+                                   class="citi-textfield-input bg-mono-white"
+                                   placeholder="${'form.citibuenfin.data.placeholder' @ i18n}" type="search" name="keyword" autocomplete="off"
+                                   aria-describedby="undefined-description">
+                            <button id="buscar"
+                                    type="button"
+                                    class="citi-textfield-suffix color-citi-b2"
+                                    onclick="$(this).parents('form').submit();">
+                                <svg>
+                                    <use href="/content/dam/citi/icons/search-o.svg#s"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="citi-textfield-feedback-container">
+                            <span class="citi-textfield-error"></span>
+                            <span class="citi-textfield-hint"></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="filtros-list-item">
+                    <div class="citi-select variant-primary">
+                        <label class="citi-select-label">${'form.citibuenfin.data.filter.label' @ i18n}</label>
+                        <div class="citi-select-input-container">
+                            <select class="citi-select-input bg-mono-white"
+                                    id="tipo"
+                                    name="tipo"
+                                    onchange="$(this).parents('form').submit()">
+
+
+                                <div  data-sly-list.buenList="${citiBuenFin.buenFinList}">
+                                    <option class=""
+                                            value="${buenList.filterOptionValue}">${buenList.filterOptionLabel}</option>
+                                </div>
+
+
+                            </select>
+                            <svg class="citi-select-arrow color-citi-b2">
+                                <use href="/content/dam/citi/icons/chevron-down.svg#s"></use>
+                            </svg>
+                        </div>
+                        <div class="citi-select-feedback-container">
+                            <span class="citi-select-error"></span>
+                            <span class="citi-select-hint"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <div id="componentLoader"
+         class="w-full loading relative loader-detalle">
+        <div class="citi-loader size-md z-10 spinner">
+            <span class="citi-loader-spinner text-citi-b2"></span>
+        </div>
+
+    </div>
+
+    <ul id="promoContainer"
+        class="citi-row mb-40"></ul>
+
+    <div id="viewMore"
+         class="w-full text-center hidden">
+        <button class="citi-link"
+                type="button">
+            ${'form.citibuenfin.data.more' @ i18n}
+        </button>
+    </div>
+</div>
+
+<div data-sly-test="${wcmmode.edit}"
+     data-emptytext="Edit Citi Buen Fin Component"
+     class="cq-placeholder"></div>
