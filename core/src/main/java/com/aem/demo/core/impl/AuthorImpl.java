@@ -35,6 +35,7 @@ public class AuthorImpl implements Author{
 	@SlingObject
 	ResourceResolver resourceResolver;
 	
+	
 	@RequestAttribute(name = "rAttribute")
 	private String reqAttribute;
 	
